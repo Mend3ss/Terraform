@@ -1,0 +1,22 @@
+# Arquivos locais do Terraform e diretório de plugins
+.terraform/
+.terraform.lock.hcl
+
+# Arquivos de estado (contêm dados sensíveis do ambiente)
+*.tfstate
+*.tfstate.backup
+
+# Variáveis secretas ou locais que você não quer versionar
+*.tfvars
+*.tfvars.json
+local.tfvars
+
+# Chaves SSH geradas localmente para o lab
+*.pem
+id_rsa
+id_rsa.pub
+
+# Arquivos temporários e de log do Terraform
+.terraformrc
+terraform.rc
+crash.log
