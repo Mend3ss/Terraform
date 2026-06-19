@@ -37,7 +37,6 @@ variable "private_subnet_cidrs" {
 
 # ECS / Container
 variable "container_image" {
-  description = "Docker image URI (e.g. nginx:latest or 123456789.dkr.ecr.us-east-1.amazonaws.com/app:v1)"
   type        = string
   default     = "joaomendes3822/my-go-app"
 }
@@ -45,7 +44,7 @@ variable "container_image" {
 variable "container_port" {
   description = "Port exposed by the container"
   type        = number
-  default     = 80
+  default     = 8000
 }
 
 variable "container_env_vars" {
