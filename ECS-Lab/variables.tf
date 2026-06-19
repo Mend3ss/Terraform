@@ -39,7 +39,7 @@ variable "private_subnet_cidrs" {
 variable "container_image" {
   description = "Docker image URI (e.g. nginx:latest or 123456789.dkr.ecr.us-east-1.amazonaws.com/app:v1)"
   type        = string
-  default     = "nginx:latest"
+  default     = "joaomendes3822/my-go-app"
 }
 
 variable "container_port" {
