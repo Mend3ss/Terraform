@@ -28,7 +28,28 @@ resource "aws_ecs_task_definition" "main" {
         }
       ]
 
-      environment = var.container_env_vars
+      environment = concat([
+        {
+          name  = "DB_HOST"
+          value = aws_db_instance.default.address
+        },
+        {
+          name  = "DB_PORT"
+          value = tostring(var.db_port)
+        },
+        {
+          name  = "DB_NAME"
+          value = var.db_name
+        },
+        {
+          name  = "DB_USER"
+          value = var.db_username
+        },
+        {
+          name  = "DB_PASSWORD"
+          value = var.db_password
+        }
+      ], var.container_env_vars)
 
       logConfiguration = {
         logDriver = "awslogs"

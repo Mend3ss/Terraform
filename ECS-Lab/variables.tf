@@ -93,3 +93,53 @@ variable "autoscaling_max" {
   type        = number
   default     = 4
 }
+
+# RDS
+variable "db_name" {
+  description = "Database name"
+  type        = string
+  default     = "root"
+}
+
+variable "db_username" {
+  description = "Master username for the RDS database"
+  type        = string
+  default     = "postgres"
+}
+
+variable "db_password" {
+  description = "Master password for the RDS database"
+  type        = string
+  sensitive   = true
+  default     = "rootroot"
+}
+
+variable "db_port" {
+  description = "Port for the database"
+  type        = number
+  default     = 54321
+}
+
+variable "db_allocated_storage" {
+  description = "Allocated storage for the RDS instance (GB)"
+  type        = number
+  default     = 10
+}
+
+variable "db_instance_class" {
+  description = "RDS instance class"
+  type        = string
+  default     = "db.t3.micro"
+}
+
+variable "db_engine" {
+  description = "Database engine"
+  type        = string
+  default     = "postgres"
+}
+
+variable "db_engine_version" {
+  description = "Database engine version"
+  type        = string
+  default     = "15.6"
+}

@@ -32,3 +32,18 @@ output "private_subnet_ids" {
   description = "Private subnet IDs"
   value       = aws_subnet.private[*].id
 }
+
+output "db_endpoint" {
+  description = "RDS endpoint address"
+  value       = aws_db_instance.default.address
+}
+
+output "db_port" {
+  description = "RDS endpoint port"
+  value       = aws_db_instance.default.port
+}
+
+output "db_name" {
+  description = "RDS database name"
+  value       = aws_db_instance.default.name
+}
