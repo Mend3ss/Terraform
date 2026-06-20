@@ -43,7 +43,7 @@ output "db_port" {
   value       = aws_db_instance.default.port
 }
 
-output "db_name" {
-  description = "RDS database name"
-  value       = aws_db_instance.default.name
-}
+# output "db_name" {
+#   description = "RDS database name"
+#   value       = aws_db_instance.default.name
+# }

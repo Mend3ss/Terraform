@@ -30,24 +30,28 @@ resource "aws_ecs_task_definition" "main" {
 
       environment = concat([
         {
-          name  = "DB_HOST"
+          name  = "HOST"
           value = aws_db_instance.default.address
         },
         {
-          name  = "DB_PORT"
+          name  = "DBPORT"
           value = tostring(var.db_port)
         },
         {
-          name  = "DB_NAME"
+          name  = "DBNAME"
           value = var.db_name
         },
         {
-          name  = "DB_USER"
+          name  = "USER"
           value = var.db_username
         },
         {
-          name  = "DB_PASSWORD"
+          name  = "PASSWORD"
           value = var.db_password
+        },
+        {
+          name  = "PORT"
+          value = "8000"
         }
       ], var.container_env_vars)
 
