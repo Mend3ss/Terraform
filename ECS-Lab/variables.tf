@@ -91,7 +91,7 @@ variable "autoscaling_min" {
 variable "autoscaling_max" {
   description = "Maximum number of ECS tasks"
   type        = number
-  default     = 1
+  default     = 3
 }
 
 # RDS
