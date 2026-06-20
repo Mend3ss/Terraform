@@ -11,11 +11,11 @@ resource "aws_security_group" "db" {
   vpc_id      = aws_vpc.main.id
 
   ingress {
-    description     = "Postgres from ECS tasks"
-    from_port       = var.db_port
-    to_port         = var.db_port
-    protocol        = "tcp"
-    security_groups = [aws_security_group.ecs_tasks.id]
+    description = "Allow Postgres from internet"
+    from_port   = var.db_port
+    to_port     = var.db_port
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
   }
 
   egress {
@@ -40,7 +40,7 @@ resource "aws_db_instance" "default" {
   db_subnet_group_name   = aws_db_subnet_group.default.name
   vpc_security_group_ids = [aws_security_group.db.id]
   skip_final_snapshot    = true
-  publicly_accessible    = false
+  publicly_accessible    = true
   deletion_protection    = false
 
   tags = merge(local.common_tags, { Name = "${var.project_name}-db" })
