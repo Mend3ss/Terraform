@@ -78,7 +78,7 @@ variable "service_desired_count" {
 variable "health_check_path" {
   description = "ALB health check path"
   type        = string
-  default     = "/leo"
+  default     = "/"
 }
 
 # Auto Scaling
@@ -91,7 +91,7 @@ variable "autoscaling_min" {
 variable "autoscaling_max" {
   description = "Maximum number of ECS tasks"
   type        = number
-  default     = 4
+  default     = 1
 }
 
 # RDS
