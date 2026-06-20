@@ -141,5 +141,5 @@ variable "db_engine" {
 variable "db_engine_version" {
   description = "Database engine version"
   type        = string
-  default     = "15.6"
+  default     = "16"
 }
